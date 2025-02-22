@@ -8,8 +8,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
 
 # Load YOLOv8 model (use "yolov8n.pt" for speed, or "yolov8s.pt" for better accuracy)
-model = YOLO("yolov8m.pt")  # Medium
-# model = YOLO("yolov8l.pt")  # Large
+# model = YOLO("yolov8m.pt")  # Medium
+model = YOLO("yolov8l.pt")  # Large
 # model = YOLO("yolov8x.pt")  # X-Large
 
 @app.route("/analyze", methods=["POST"])
@@ -21,7 +21,8 @@ def analyze_image():
         return jsonify({"error": "No file uploaded"}), 400
 
     file = request.files["file"]
-    image = cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_COLOR)
+    img = np.frombuffer(file.read(), np.uint8)
+    image = cv2.imdecode(img, cv2.IMREAD_COLOR)
 
     # Run YOLO on the image
     results = model(image)
