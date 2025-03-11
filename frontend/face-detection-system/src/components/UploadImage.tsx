@@ -110,7 +110,7 @@ const styles = {
     maxWidth: "1000px",
   },
   header: {
-    fontSize: "24px",
+    fontSize: "25px",
     color: "#fff",
     marginBottom: "20px",
     textAlign: "center",
