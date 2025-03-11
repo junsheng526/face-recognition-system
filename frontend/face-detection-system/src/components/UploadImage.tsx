@@ -59,7 +59,7 @@ const UploadImage = () => {
 
   return (
     <div style={styles.container}>
-      <h1>Upload an Image for People Counting</h1>
+      <h1 style={styles.header} >Upload an Image for People Counting</h1>
 
       <div style={styles.row}>
         {/* Left Column */}
@@ -71,7 +71,7 @@ const UploadImage = () => {
               disabled={loading}
               style={loading ? styles.buttonDisabled : styles.button}
             >
-              {loading ? "Processing..." : "Upload"}
+              {loading ? "Processing..." : "Count"}
             </button>
           </div>
 
@@ -110,9 +110,9 @@ const styles = {
     maxWidth: "1000px",
   },
   header: {
-    fontSize: "25px",
-    color: "#fff",
-    marginBottom: "20px",
+    fontSize: "40px",
+    color: "#d1768f",
+    marginBottom: "35px",
     textAlign: "center",
   },
   row: {
@@ -145,9 +145,10 @@ const styles = {
     maxWidth: "300px",
   },
   button: {
-    backgroundColor: "#007BFF",
+    backgroundColor: "#fda3b6",
     color: "white",
     padding: "10px 20px",
+    marginLeft:"10px",
     fontSize: "16px",
     border: "none",
     borderRadius: "4px",
@@ -173,7 +174,7 @@ const styles = {
   },
   resultText: {
     fontSize: "20px",
-    color: "#fff",
+    color: "#600216",
     fontWeight: "bold",
   },
   previewContainer: {
@@ -183,11 +184,11 @@ const styles = {
   },
   previewTitle: {
     fontSize: "18px",
-    color: "#fff",
+    color: "#fb6c8a",
     marginBottom: "10px",
   },
   previewImage: {
-    maxWidth: "100%",
+    maxWidth: "85%",
     height: "auto",
     borderRadius: "8px",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
